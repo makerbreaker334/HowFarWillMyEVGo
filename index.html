@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EV Range Calculator</title>
+  <style>
+    /* Global Styling */
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      min-width: 350px; 
+      padding: 20px; 
+      background-color: #f0f4f8; /* Light background */
+      color: #333;
+    }
+    
+    /* Headings */
+    h2 {
+      color: #007bff; /* Primary blue color */
+      margin-bottom: 20px;
+      font-weight: 600;
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 5px;
+    }
+    
+    /* Input Group Styling */
+    .input-group { 
+      margin-bottom: 15px; 
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    /* Labels */
+    label { 
+      display: block; 
+      margin-bottom: 5px; 
+      font-weight: 500; 
+      color: #555;
+      font-size: 0.95em;
+    }
+    
+    /* Input Fields */
+    input[type="number"] { 
+      width: 100%; 
+      padding: 10px; 
+      box-sizing: border-box; 
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      transition: border-color 0.3s;
+    }
+    
+    input[type="number"]:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    /* Calculate Button */
+    button { 
+      padding: 12px; 
+      background-color: #28a745; /* Green for action */
+      color: white; 
+      border: none; 
+      border-radius: 4px;
+      cursor: pointer; 
+      width: 100%; 
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* Result Display */
+    .result { 
+      margin-top: 25px; 
+      padding: 15px;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      font-size: 1.3em; 
+      font-weight: bold; 
+      text-align: center;
+      background-color: #eaf6ff;
+    }
+    
+    .result-label {
+      font-size: 0.8em;
+      font-weight: normal;
+      color: #555;
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔋 How Far Will My EV Go?</h2>
+
+  <div class="input-group">
+    <label for="batterySize">Battery Size (kWh)</label>
+    <input type="number" id="batterySize" placeholder="e.g., 64 (Your Car's Total Capacity)" step="any">
+  </div>
+
+  <div class="input-group">
+    <label for="energyUsage">Average Energy Usage (kWh/100km)</label>
+    <input type="number" id="energyUsage" placeholder="e.g., 14.5 (From Your Trip Computer)" step="any">
+  </div>
+
+  <div class="input-group">
+    <label for="batteryPercentage">Percentage of Battery Remaining (%)</label>
+    <input type="number" id="batteryPercentage" placeholder="e.g., 80" min="0" max="100" step="any">
+  </div>
+
+  <div class="input-group">
+    <label for="distanceRemaining">Estimated Distance Remaining (km)</label>
+    <input type="number" id="distanceRemaining" placeholder="Leave this blank to find the answer!" step="any">
+  </div>
+
+  <button id="calculateButton">Calculate Range 🚀</button>
+
+  <div class="result" id="result">
+    <span class="result-label">The missing value will appear here.</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
