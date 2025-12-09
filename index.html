@@ -4,13 +4,16 @@
   <title>EV Range Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Global Styling */
+/* Global Styling */
     body { 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      /* MIN-WIDTH REMOVED: Allowing the body to stretch */
       padding: 20px; 
-      background-color: #f0f4f8;
+      background-color: #f0f4f8; 
       color: #333;
+      
+      /* --- THE FIX: Constrain and Center Content --- */
+      max-width: 450px; 
+      margin: 0 auto; /* This centers the content on wide screens */
     }
     
     /* Headings */
@@ -141,3 +144,4 @@
   <script src="popup.js"></script>
 </body>
 </html>
+
